@@ -4,95 +4,133 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website Informatika</title>
+    <link rel="stylesheet" href="style.css">
+
     <style>
-        /* General body styling */
         body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #f3f4f6, #e3e6ea);
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            background-color: #fce4ec; /* Pink Soft Background */
+            color: #333;
         }
 
-        /* Main section */
-        main {
-            width: 100%;
-            max-width: 800px;
+        header {
+            background-color: #f48fb1; /* Soft Pink Header */
+            color: #fff;
             padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-            background: white;
             text-align: center;
         }
 
-        /* Cards container */
-        .cards {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            margin-top: 20px;
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 600;
         }
 
-        /* Individual card styling */
-        .card {
-            width: 300px;
+        header p {
+            margin: 5px 0 0;
+            font-size: 1rem;
+            font-style: italic;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
             padding: 20px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid #f8bbd0; /* Soft pink border */
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            background: linear-gradient(135deg, #4facfe, #00f2fe);
-            color: white;
+            padding: 20px;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        /* Card hover effect */
         .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
 
-        /* Card title */
         .card h3 {
-            margin-bottom: 10px;
+            margin: 0 0 10px;
             font-size: 1.5rem;
+            color: #f48fb1; /* Soft Pink for Text */
         }
 
-        /* Card link styling */
         .card a {
             display: inline-block;
             margin-top: 10px;
             padding: 10px 20px;
-            border-radius: 5px;
-            background: white;
-            color: #4facfe;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #f48fb1; /* Soft Pink Button */
             text-decoration: none;
-            font-weight: bold;
-            transition: background 0.3s ease, color 0.3s ease;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
 
-        /* Card link hover effect */
         .card a:hover {
-            background: #00f2fe;
-            color: white;
+            background-color: #f06292; /* Darker Soft Pink on Hover */
+        }
+
+        .card i {
+            font-size: 2rem;
+            color: #f48fb1; /* Soft Pink Icon */
+            margin-bottom: 10px;
+        }
+
+        .card-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            background-color: #f8bbd0; /* Light Pink Background for Icon */
+            margin: 0 auto 10px;
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>Esthi Sekar Pratiwi</h1>
+        <p>NIM: L200220256</p>
+    </header>
+
     <main>
         <section class="cards">
             <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-code"></i>
+                </div>
                 <h3>Tugas Sebelum UTS</h3>
-                <a target="_blank" href="tugasuts.html">Lihat Tugas</a>
+                <a target="_blank" href="https://github.com/ums-l200220214/ums-l200220214.github.io/blob/main/helloworld.py">Lihat Tugas</a>
             </div>
             <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-file-alt"></i>
+                </div>
                 <h3>Tugas Sebelum UAS</h3>
-                <a target="_blank" href="laporan.html">Lihat Tugas</a>
+                <a target="_blank" href="https://ums-l200220214.github.io/laporan.html">Lihat Tugas</a>
             </div>
         </section>
     </main>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
