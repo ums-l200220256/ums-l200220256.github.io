@@ -1,166 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulasi Proses Mahasiswa</title>
+    <title>Proses Kuliah Informatika</title>
     <style>
-        * {
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #ff7a18, #af002d 40%, #3205a8);
-            color: #fff;
-            padding: 40px;
-        }
-
-        h1, h2 {
+        header {
+            background-color: #4CAF50;
+            color: white;
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+            padding: 20px 0;
         }
-
-        main {
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 30px;
-            background: rgba(0, 0, 0, 0.6);
-            border-radius: 12px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-        }
-
-        button {
-            width: 100%;
+        .step {
+            background-color: #ffffff;
+            margin: 20px;
             padding: 15px;
-            background: #ff8a00;
-            border: none;
-            font-size: 1.5rem;
             border-radius: 8px;
-            color: #fff;
-            cursor: pointer;
-            transition: background 0.3s ease-in-out;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-
-        button:hover {
-            background: #d76d00;
+        .step h2 {
+            color: #4CAF50;
         }
-
-        .logs {
-            margin-top: 30px;
-            padding: 20px;
-            background: #2e3b4e;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            height: 300px;
-            overflow-y: scroll;
+        .step p {
+            font-size: 1.1em;
+            line-height: 1.6em;
         }
-
-        .log-entry {
-            background: #3c4d69;
-            margin-bottom: 15px;
-            padding: 10px;
-            border-radius: 5px;
-            animation: fadeIn 0.5s ease-out;
+        .step ul {
+            list-style: none;
+            padding-left: 20px;
         }
-
-        .log-entry p {
-            margin: 0;
-            font-size: 1rem;
-            line-height: 1.5;
+        .step ul li {
+            margin: 5px 0;
         }
-
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(-20px); }
-            100% { opacity: 1; transform: translateY(0); }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
         }
-
-        .code-block {
-            font-family: 'Courier New', Courier, monospace;
-            background-color: #1e1e1e;
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 30px;
-            overflow-x: auto;
-            color: #e6e6e6;
-            white-space: pre-wrap;
-        }
-
     </style>
 </head>
 <body>
     <header>
-        <h1>Simulasi Proses Mahasiswa</h1>
+        <h1>📚 Proses Kuliah Informatika 📚</h1>
     </header>
 
-    <main>
-        <h2>Langkah-langkah Proses Mahasiswa</h2>
+    <div class="step">
+        <h2>💳 Langkah 1: Bayar SPP</h2>
+        <p>Langkah pertama dalam kuliah informatika adalah membayar SPP. Setelah pembayaran, status Anda akan tercatat sebagai:</p>
+        <ul>
+            <li>Status Pembayaran: Lunas</li>
+        </ul>
+    </div>
 
-        <div class="code-block">
-            <span class="code">class Student:</span><br>
-            <span class="code">    def __init__(self, name):</span><br>
-            <span class="code">        self.name = name</span><br>
-            <span class="code">        self.spp_paid = False</span><br>
-            <span class="code">        self.grades = []</span><br><br>
+    <div class="step">
+        <h2>📖 Langkah 2: Pilih Mata Kuliah</h2>
+        <p>Setelah pembayaran selesai, Anda dapat memilih mata kuliah yang akan diambil. Pilihan mata kuliah antara lain:</p>
+        <ul>
+            <li>Algoritma</li>
+            <li>Struktur Data</li>
+            <li>Basis Data</li>
+            <li>Pemrograman Lanjut</li>
+        </ul>
+    </div>
 
-            <span class="code">    def pay_spp(self):</span><br>
-            <span class="code">        self.spp_paid = True</span><br>
-            <span class="code">        print(f"{self.name} telah membayar SPP.")</span><br><br>
+    <div class="step">
+        <h2>🎓 Langkah 3: Mengikuti Perkuliahan</h2>
+        <p>Selanjutnya, Anda harus mengikuti perkuliahan dengan kehadiran yang dicatat sebagai berikut:</p>
+        <ul>
+            <li>Algoritma: Hadir</li>
+            <li>Struktur Data: Hadir</li>
+            <li>Basis Data: Hadir</li>
+            <li>Pemrograman Lanjut: Hadir</li>
+        </ul>
+    </div>
 
-            <span class="code">    def enroll_course(self, course):</span><br>
-            <span class="code">        if not self.spp_paid:</span><br>
-            <span class="code">            print(f"{self.name} tidak bisa mendaftar ke mata kuliah {course}.")</span><br>
-            <span class="code">        else:</span><br>
-            <span class="code">            print(f"{self.name} telah mendaftar ke mata kuliah {course}.")</span><br><br>
+    <div class="step">
+        <h2>✏️ Langkah 4: Mengerjakan Tugas</h2>
+        <p>Setiap mata kuliah memiliki tugas yang harus diselesaikan. Nilai tugas yang diperoleh adalah:</p>
+        <ul>
+            <li>Algoritma: 80</li>
+            <li>Struktur Data: 85</li>
+            <li>Basis Data: 90</li>
+            <li>Pemrograman Lanjut: 95</li>
+        </ul>
+    </div>
 
-            <span class="code">    def submit_grade(self, grade):</span><br>
-            <span class="code">        self.grades.append(grade)</span><br>
-            <span class="code">        print(f"{self.name} telah mendapatkan nilai {grade}.")</span><br><br>
+    <div class="step">
+        <h2>📜 Langkah 5: Mengikuti Ujian Akhir</h2>
+        <p>Setelah tugas selesai, Anda akan mengikuti ujian akhir dengan hasil sebagai berikut:</p>
+        <ul>
+            <li>Algoritma: 70</li>
+            <li>Struktur Data: 80</li>
+            <li>Basis Data: 90</li>
+            <li>Pemrograman Lanjut: 100</li>
+        </ul>
+    </div>
 
-            <span class="code">    def calculate_final_grade(self):</span><br>
-            <span class="code">        final_grade = sum(self.grades) / len(self.grades)</span><br><br>
+    <div class="step">
+        <h2>📊 Langkah 6: Menghitung Nilai Akhir</h2>
+        <p>Nilai akhir dihitung berdasarkan bobot tugas (40%) dan ujian (60%). Berikut adalah nilai akhir Anda:</p>
+        <ul>
+            <li>Algoritma: 76</li>
+            <li>Struktur Data: 82</li>
+            <li>Basis Data: 90</li>
+            <li>Pemrograman Lanjut: 98</li>
+        </ul>
+    </div>
 
-            <span class="code">student1 = Student("Ali")</span><br>
-            <span class="code">student1.pay_spp()</span><br>
-            <span class="code">student1.enroll_course("Pemrograman Dasar")</span><br>
-        </div>
-
-        <button onclick="runSimulatedFlow()">Jalankan Simulasi</button>
-
-        <div class="logs" id="logs">
-            <p>Hasil akan muncul di sini...</p>
-        </div>
-    </main>
-
-    <script>
-        function runSimulatedFlow() {
-            const logs = [];
-            logs.push("Proses mulai: Mahasiswa Ali mulai mengikuti kuliah.");
-
-            // Simulate the process
-            const sppTerbayar = true;
-            if (sppTerbayar) {
-                logs.push("SPP berhasil dibayarkan.");
-                logs.push("Mahasiswa Ali telah mendaftar ke mata kuliah Pemrograman Dasar.");
-                logs.push("Mahasiswa Ali telah mendaftar ke mata kuliah Algoritma dan Struktur Data.");
-
-                const grades = [85, 90];
-                const finalGrade = grades.reduce((acc, grade) => acc + grade, 0) / grades.length;
-                logs.push("Nilai ujian diproses.");
-                logs.push(`Nilai akhir untuk Ali adalah ${finalGrade.toFixed(2)}.`);
-            } else {
-                logs.push("SPP belum dibayarkan. Proses dihentikan.");
-            }
-
-            logs.push("Proses selesai: Mahasiswa Ali berhasil mendapatkan KHS.");
-
-            const logsDiv = document.getElementById('logs');
-            logsDiv.innerHTML = logs.map(log => `<div class="log-entry"><p>${log}</p></div>`).join('');
-        }
-    </script>
+    <footer>
+        <p>🎉 Proses Kuliah Informatika Selesai! 🎉</p>
+        <p>Selamat! Anda telah menyelesaikan semua tahapan kuliah.</p>
+    </footer>
 </body>
 </html>
