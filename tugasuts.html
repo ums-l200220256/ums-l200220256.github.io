@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulasi Proses Mahasiswa</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ff7a18, #af002d 40%, #3205a8);
+            color: #fff;
+            padding: 40px;
+        }
+
+        h1, h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        main {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background: #ff8a00;
+            border: none;
+            font-size: 1.5rem;
+            border-radius: 8px;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background: #d76d00;
+        }
+
+        .logs {
+            margin-top: 30px;
+            padding: 20px;
+            background: #2e3b4e;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            height: 300px;
+            overflow-y: scroll;
+        }
+
+        .log-entry {
+            background: #3c4d69;
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .log-entry p {
+            margin: 0;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .code-block {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            overflow-x: auto;
+            color: #e6e6e6;
+            white-space: pre-wrap;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Simulasi Proses Mahasiswa</h1>
+    </header>
+
+    <main>
+        <h2>Langkah-langkah Proses Mahasiswa</h2>
+
+        <div class="code-block">
+            <span class="code">class Student:</span><br>
+            <span class="code">    def __init__(self, name):</span><br>
+            <span class="code">        self.name = name</span><br>
+            <span class="code">        self.spp_paid = False</span><br>
+            <span class="code">        self.grades = []</span><br><br>
+
+            <span class="code">    def pay_spp(self):</span><br>
+            <span class="code">        self.spp_paid = True</span><br>
+            <span class="code">        print(f"{self.name} telah membayar SPP.")</span><br><br>
+
+            <span class="code">    def enroll_course(self, course):</span><br>
+            <span class="code">        if not self.spp_paid:</span><br>
+            <span class="code">            print(f"{self.name} tidak bisa mendaftar ke mata kuliah {course}.")</span><br>
+            <span class="code">        else:</span><br>
+            <span class="code">            print(f"{self.name} telah mendaftar ke mata kuliah {course}.")</span><br><br>
+
+            <span class="code">    def submit_grade(self, grade):</span><br>
+            <span class="code">        self.grades.append(grade)</span><br>
+            <span class="code">        print(f"{self.name} telah mendapatkan nilai {grade}.")</span><br><br>
+
+            <span class="code">    def calculate_final_grade(self):</span><br>
+            <span class="code">        final_grade = sum(self.grades) / len(self.grades)</span><br><br>
+
+            <span class="code">student1 = Student("Ali")</span><br>
+            <span class="code">student1.pay_spp()</span><br>
+            <span class="code">student1.enroll_course("Pemrograman Dasar")</span><br>
+        </div>
+
+        <button onclick="runSimulatedFlow()">Jalankan Simulasi</button>
+
+        <div class="logs" id="logs">
+            <p>Hasil akan muncul di sini...</p>
+        </div>
+    </main>
+
+    <script>
+        function runSimulatedFlow() {
+            const logs = [];
+            logs.push("Proses mulai: Mahasiswa Ali mulai mengikuti kuliah.");
+
+            // Simulate the process
+            const sppTerbayar = true;
+            if (sppTerbayar) {
+                logs.push("SPP berhasil dibayarkan.");
+                logs.push("Mahasiswa Ali telah mendaftar ke mata kuliah Pemrograman Dasar.");
+                logs.push("Mahasiswa Ali telah mendaftar ke mata kuliah Algoritma dan Struktur Data.");
+
+                const grades = [85, 90];
+                const finalGrade = grades.reduce((acc, grade) => acc + grade, 0) / grades.length;
+                logs.push("Nilai ujian diproses.");
+                logs.push(`Nilai akhir untuk Ali adalah ${finalGrade.toFixed(2)}.`);
+            } else {
+                logs.push("SPP belum dibayarkan. Proses dihentikan.");
+            }
+
+            logs.push("Proses selesai: Mahasiswa Ali berhasil mendapatkan KHS.");
+
+            const logsDiv = document.getElementById('logs');
+            logsDiv.innerHTML = logs.map(log => `<div class="log-entry"><p>${log}</p></div>`).join('');
+        }
+    </script>
+</body>
+</html>
