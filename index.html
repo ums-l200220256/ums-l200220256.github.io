@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Informatika</title>
+    <style>
+        /* General body styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f3f4f6, #e3e6ea);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Main section */
+        main {
+            width: 100%;
+            max-width: 800px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            background: white;
+            text-align: center;
+        }
+
+        /* Cards container */
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        /* Individual card styling */
+        .card {
+            width: 300px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            color: white;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Card hover effect */
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Card title */
+        .card h3 {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        /* Card link styling */
+        .card a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background: white;
+            color: #4facfe;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        /* Card link hover effect */
+        .card a:hover {
+            background: #00f2fe;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="cards">
+            <div class="card">
+                <h3>Tugas Sebelum UTS</h3>
+                <a target="_blank" href="tugasuts.html">Lihat Tugas</a>
+            </div>
+            <div class="card">
+                <h3>Tugas Sebelum UAS</h3>
+                <a target="_blank" href="laporan.html">Lihat Tugas</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
